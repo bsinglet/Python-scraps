@@ -1,3 +1,29 @@
+# Flexible function that will split the characters of an input string
+# into a matrix of up to 10x10.
+def to_matrix_flexible(text):
+	size = 0
+	my_matrix = []
+	if len(text) == 0:
+		return my_matrix
+	# produce matrices up to size 10x10
+	for i in range(0, 10):
+		if i*i >= len(text):
+			size = i
+			break
+	if size == 0:
+		size = 10
+	for y in range(0, size):
+		my_row = []
+		for x in range(0, size):
+			if ((y*size)+x >= len(text)):
+				my_row.append(" ")
+			else:
+				my_row.append(text[(y*size)+x])
+		my_matrix.append(my_row)
+	return my_matrix
+
+# older matricizing function that splits the characters of a string
+# into a 5x5 matrix of characters.
 def to_matrix(text):
 	my_matrix = []
 	for y in range(0, 5):

@@ -33,40 +33,22 @@ def evaluate(parseTree):
 				rightChild.data.value = evaluate(rightChild)
 			if parseTree.data.value == '>':
 				# see if the value of the left child is greater than the value of the right child
-				if leftChild.data.value > rightChild.data.value:
-					return True
-				else:
-					return False
+				return leftChild.data.value > rightChild.data.value
 			elif parseTree.data.value == '<':
 				# see if the value of the left child is less than the value of the right child
-				if leftChild.data.value < rightChild.data.value:
-					return True
-				else:
-					return False
+				return leftChild.data.value < rightChild.data.value
 			elif parseTree.data.value == '>=':
 				# see if the value of the left child is greater than or equal to the value of the right child
-				if leftChild.data.value >= rightChild.data.value:
-					return True
-				else:
-					return False
+				return leftChild.data.value >= rightChild.data.value
 			elif parseTree.data.value == '<=':
 				# see if the value of the left child is less than or equal to the value of the right child
-				if leftChild.data.value <= rightChild.data.value:
-					return True
-				else:
-					return False
+				return leftChild.data.value <= rightChild.data.value
 			elif parseTree.data.value == '!=':
 				# see if the value of the left child is not equal to the value of the right child
-				if leftChild.data.value != rightChild.data.value:
-					return True
-				else:
-					return False
+				return leftChild.data.value != rightChild.data.value
 			elif parseTree.data.value == '==':
 				# see if the value of the left child is equal to the value of the right child
-				if leftChild.data.value == rightChild.data.value:
-					return True
-				else:
-					return False
+				return leftChild.data.value == rightChild.data.value
 	elif parseTree.data.type == 'IDENTIFIER':
 		return my_values[parseTree.data.value]
 
